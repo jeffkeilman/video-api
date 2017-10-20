@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class VideosController < ProtectedController
   before_action :set_video, only: %i[show update destroy]
 
   # GET /videos
   def index
-    @videos = Video.all
+    @videos = current_user.videos.all
 
     render json: @videos
   end
@@ -47,6 +49,6 @@ class VideosController < ProtectedController
 
   # Only allow a trusted parameter "white list" through.
   def video_params
-    params.require(:video).permit(:title, :url, :youtuber, :description, :length, :user_id_id)
+    params.require(:video).permit(:title, :url, :youtuber, :description, :length, :user_id)
   end
 end
