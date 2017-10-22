@@ -5,8 +5,8 @@ class VideosController < ProtectedController
 
   # GET /videos
   def index
-    @videos = current_user.videos.all
-
+    @videos = current_user.videos
+    binding.pry
     render json: @videos
   end
 
