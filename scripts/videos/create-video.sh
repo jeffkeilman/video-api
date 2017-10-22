@@ -12,8 +12,7 @@ curl "${API}${URL_PATH}" \
       "title": "'"${TITLE}"'",
       "url": "'"${URL}"'",
       "youtuber": "'"${YOUTUBER}"'",
-      "description": "'"${DESCRIPTION}"'",
-      "length": "'"${LENGTH}"'"
+      "description": "'"${DESCRIPTION}"'"
     }
   }'
 

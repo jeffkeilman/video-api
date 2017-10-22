@@ -6,7 +6,6 @@ class VideosController < ProtectedController
   # GET /videos
   def index
     @videos = current_user.videos
-    binding.pry
     render json: @videos
   end
 
@@ -49,6 +48,6 @@ class VideosController < ProtectedController
 
   # Only allow a trusted parameter "white list" through.
   def video_params
-    params.require(:video).permit(:title, :url, :youtuber, :description, :length, :user_id)
+    params.require(:video).permit(:title, :url, :youtuber, :description, :user_id)
   end
 end
